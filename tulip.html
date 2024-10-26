@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulip - Garden Mood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('Images/tulip.png'); 
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the image */
+
+        }
+
+        /* Additional styles for specific elements */
+        .plant-card {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for contrast */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px;
+            margin: 20px auto; /* Center the card */
+        
+        }
+        .back-button {
+            display: inline-block; 
+            background-color: #876a8f; 
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding for spacing */
+            text-decoration: blueviolet; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+            margin-top: 20px; /* Space above the button */
+            font-size: 1.1em; /* Larger text */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Initial shadow */
+            transition: box-shadow 0.3s; /* Smooth transition */
+            border: 2px solid transparent; /* Initial border */
+            transition: border-color 0.3s; /* Smooth transition */
+        }
+
+        .back-button:hover {
+            background-color: #de94fc; /* Darker green on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(75, 75, 75, 0.2); /* Darker shadow on hover */
+            border-color: #f5cadf; /* Green border on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    <h1>Tulip - Garden Mood</h1>
+
+    <div class="plant-card">
+        <div class="plant-name">Tulip</div>
+        <div class="mood" id="tulipMood">🌞 Happy and Blooming</div>
+        <div class="sensor">Soil Moisture: <span id="tulipMoisture">45%</span></div>
+        <div class="sensor">Sunlight: <span id="tulipLight">Medium</span></div>
+        <div class="sensor">Temperature: <span id="tulipTemp">24°C</span></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Start updates for the tulip plant
+        startPlantUpdates("tulip");
+    </script>
+</body>
+</html>

@@ -1,23 +1,92 @@
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; 
+    background-image: url('Images/1.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-color: #e9f5e9; 
+    color: #333;
     text-align: center;
-    background-image:url(Emoji/1.jpg) ;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 0.5s ease;
+    padding: 20px;
+    margin: 0;
 }
 
 h1 {
-    margin-top: 100px;
+    color: #e4fd04; /* Green color for the header */
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    padding: 20px;
+    text-align: center; /* Center text */
+    transition: transform 0.3s, background-color 0.3s; /* Smooth transition */
 }
 
-button {
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center; /* Center buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.plant-button {
+    display: inline-block;
+    background-color: #4caf50; /* Button color */
+    color: white;
     padding: 15px 25px;
-    font-size: 1.2em;
-    cursor: pointer;
-    background-color: rgb(255, 204, 95);
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 25px;
-    border-style: inset;
-    position: centre;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+    margin: 10px; /* Space between buttons */
+    font-size: 1.2em; /* Slightly larger text */
+}
+
+.plant-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.plant-card {
+    width: 250px; /* Fixed width for cards */
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #4caf50; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text */
+
+}
+
+
+.sensor {
+    font-size: 1.1em; /* Larger font for sensor data */
+    margin: 10px 0; /* Space between sensor readings */
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #4caf50; /* Button color */
+    color: rgb(243, 95, 95);
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+    margin: 10px; /* Space between buttons */
+    font-size: 1.2em; /* Slightly larger text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Initial shadow */
+    transition: box-shadow 0.3s; /* Smooth transition */
+    border: 2px solid transparent; /* Initial border */
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+.back-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); 
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(75, 75, 75, 0.2); /* Darker shadow on hover */
+    border-color: #45a049; /* Green border on hover */
 }

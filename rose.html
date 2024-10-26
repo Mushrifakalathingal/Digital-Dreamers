@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose - Garden Mood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('Images/rose.png'); 
+            background-size: cover; 
+            background-position: center; 
+            
+        }
+
+        /* Additional styles for specific elements */
+        .plant-card {
+            background-color: rgba(255, 220, 220, 0.8); 
+            border-radius: 10px; 
+            padding: 20px;
+            margin: 20px auto; 
+            max-width: 600px; 
+        }
+        .back-button {
+            display: inline-block; /* Make it behave like a button */
+            background-color: #cc5858; /* Green background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding for spacing */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+            margin-top: 20px; /* Space above the button */
+            font-size: 1.1em; /* Larger text */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Initial shadow */
+            transition: box-shadow 0.3s; /* Smooth transition */
+            border: 2px solid transparent; /* Initial border */
+            transition: border-color 0.3s; /* Smooth transition */
+        }
+
+        .back-button:hover {
+            background-color: #fa95e4; /* Darker green on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(75, 75, 75, 0.2); /* Darker shadow on hover */
+            border-color: #f7d7e8; /* Green border on hover */
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back to Home</a>
+    <h1>Rose - Garden Mood</h1>
+
+    <div class="plant-card">
+        <div class="plant-name">Rose</div>
+        <div class="mood" id="roseMood">🌞 Happy and Blooming</div>
+        <div class="sensor">Soil Moisture: <span id="roseMoisture">45%</span></div>
+        <div class="sensor">Sunlight: <span id="roseLight">Medium</span></div>
+        <div class="sensor">Temperature: <span id="roseTemp">24°C</span></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Start updates for the Rose plant
+        startPlantUpdates("rose");
+    </script>
+</body>
+</html>

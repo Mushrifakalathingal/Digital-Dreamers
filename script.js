@@ -1,33 +1,42 @@
-//Define possible moods with associated image
-const moods=[
-    { mood: "happy", Imagesrc:"Emoji/2.jpg" },
-    { mood: "sad", Imagesrc:"Emoji/3.jpg" },
-    { mood: "hungry", Imagesrc:"Emoji/5.jpg" },
-    { mood: "thirsty", Imagesrc:"Emoji/7.jpg" },
-    { mood: "angry", Imagesrc:"Emoji/4.jpg" },
-    { mood: "extenstential Dread", Imagesrc:"Emoji/6.jpg" },
-];
-//Function to change mood
-function changeMood() {
-    const randomMood = moods[Math.floor(Math.random() * moods.length)];
-    document.body.style.backgroundImage = `url(${randomMood.Imagesrc})`;
-    document.getElementById("mood-text").innerText = `I am feeling ${randomMood.mood}`;
 
-    // Apply mood image and text
+// Common refresh interval for all pages (in milliseconds)
+const REFRESH_INTERVAL = 10000;
 
-    document.body.style.backgroundImage = `url(${randomMood.Imagesrc})`;
-
-    document.getElementById("mood-text").innerText = `I am feeling ${randomMood.mood}`;
+// Utility function to simulate random data within a range (e.g., moisture, sunlight)
+function getRandomData(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//Instalize a random mood on page load changeMood()
+// Function to update mood based on sensor readings
+function updateMood(moisture, sunlight, plantType) {
+    let moodMessage;
 
-// Button click event to switch pages
+    if (plantType === "rose") {
+        if (moisture > 70) {
+            moodMessage = "🌧️ Overwatered";
+        } else if (moisture > 40) {
+            moodMessage = "🌞 Thriving";
+        } else {
+            moodMessage = "💧 Needs Water";
+        }
+    } else if (plantType === "sunflower") {
+        if (sunlight > 80) {
+            moodMessage = "☀️ Soaking up the sun!";
+        } else if (sunlight > 50) {
+            moodMessage = "🌻 Feeling Sunny";
+        } else {
+            moodMessage = "🌥️ Needs More Sun";
+        }
+    } else if (plantType === "tulip") {
+        if (moisture > 60) {
+            moodMessage = "🌷 Blooming";
+        } else if (moisture > 30) {
+            moodMessage = "🌱 Growing";
+        } else {
+            moodMessage = "💧 Thirsty";
+        }
+    }
 
-document.getElementById("mood-button").addEventListener("click", function() {
-    window.location.href = "happy"; // Change this to your desired page
-});
+    return moodMessage;
+}
 
-
-// Add event listener to button
-document.getElementById("mood-button").addEventListener("click", changeMood);
