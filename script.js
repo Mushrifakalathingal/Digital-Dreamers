@@ -40,3 +40,35 @@ function updateMood(moisture, sunlight, plantType) {
     return moodMessage;
 }
 
+
+// Function to edit plant details
+function editPlant(plant) {
+    const name = document.getElementById(`${plant}Name`).textContent;
+    const mood = document.getElementById(`${plant}Mood`).textContent;
+
+    // Set the current values in the input fields
+    document.getElementById(`${plant}EditName`).value = name;
+    document.getElementById(`${plant}EditMood`).value = mood;
+
+    // Show the edit form
+    document.getElementById(`${plant}EditForm`).style.display = 'block';
+}
+
+// Function to save changes
+function saveChanges(plant) {
+    const newName = document.getElementById(`${plant}EditName`).value;
+    const newMood = document.getElementById(`${plant}EditMood`).value;
+
+    // Update the plant card with the new values
+    document.getElementById(`${plant}Name`).textContent = newName;
+    document.getElementById(`${plant}Mood`).textContent = newMood;
+
+    // Hide the edit form
+    document.getElementById(`${plant}EditForm`).style.display = 'none';
+}
+
+// Function to cancel editing
+function cancelEdit(plant) {
+    // Hide the edit form
+    document.getElementById(`${plant}EditForm`).style.display = 'none';
+}

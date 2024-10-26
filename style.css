@@ -90,3 +90,17 @@ p {
     box-shadow: 0 8px 20px rgba(75, 75, 75, 0.2); /* Darker shadow on hover */
     border-color: #45a049; /* Green border on hover */
 }
+
+.edit-form {
+    margin-top: 10px; /* Space above the edit form */
+}
+
+.edit-form input {
+    margin: 5px 0; /* Space between inputs */
+    padding: 8px; /* Padding inside inputs */
+    width: 90%; /* Full width */
+}
+
+.edit-form button {
+    margin-right: 5px; /* Space between buttons */
+}
