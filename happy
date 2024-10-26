@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            padding: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>I AM FEELING HAPPY NOW!</h1>
+    
+    <button id="back-button">Go Back</button>
+
+    <script>
+        // Go back to the previous page
+        document.getElementById("back-button").addEventListener("click", function() {
+            window.history.back(); // This will take you back to the previous page
+        });
+    </script>
+</body>
+</html>
