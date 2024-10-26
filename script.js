@@ -1,74 +1,38 @@
-
-// Common refresh interval for all pages (in milliseconds)
-const REFRESH_INTERVAL = 10000;
-
-// Utility function to simulate random data within a range (e.g., moisture, sunlight)
 function getRandomData(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Function to update mood based on sensor readings
-function updateMood(moisture, sunlight, plantType) {
+function updateMood(plantType) {
+    const moisture = getRandomData(0, 100); // Simulated moisture level
+    const sunlight = getRandomData(0, 100); // Simulated sunlight level
+
     let moodMessage;
 
     if (plantType === "rose") {
-        if (moisture > 70) {
-            moodMessage = "🌧️ Overwatered";
-        } else if (moisture > 40) {
-            moodMessage = "🌞 Thriving";
-        } else {
-            moodMessage = "💧 Needs Water";
-        }
+        moodMessage = moisture > 70 ? "🌧️ Overwatered" :
+                      moisture > 40 ? "🌞 Thriving" :
+                      "💧 Needs Water";
     } else if (plantType === "sunflower") {
-        if (sunlight > 80) {
-            moodMessage = "☀️ Soaking up the sun!";
-        } else if (sunlight > 50) {
-            moodMessage = "🌻 Feeling Sunny";
-        } else {
-            moodMessage = "🌥️ Needs More Sun";
-        }
+        moodMessage = sunlight > 80 ? "☀️ Soaking up the sun!" :
+                      sunlight > 50 ? "🌻 Feeling Sunny" :
+                      "🌥️ Needs More Sun";
     } else if (plantType === "tulip") {
-        if (moisture > 60) {
-            moodMessage = "🌷 Blooming";
-        } else if (moisture > 30) {
-            moodMessage = "🌱 Growing";
-        } else {
-            moodMessage = "💧 Thirsty";
-        }
+        moodMessage = moisture > 60 ? "🌷 Blooming" :
+                      moisture > 30 ? "🌱 Growing" :
+                      "💧 Thirsty";
     }
 
-    return moodMessage;
+    document.getElementById(`${plantType}Mood`).textContent = moodMessage;
+    document.getElementById(`${plantType}Moisture`).textContent = `${moisture}%`;
+    document.getElementById(`${plantType}Light`).textContent = sunlight > 50 ? "High" : "Low";
+    document.getElementById(`${plantType}Temp`).textContent = `${getRandomData(15, 30)}°C`;
 }
 
-
-// Function to edit plant details
-function editPlant(plant) {
-    const name = document.getElementById(`${plant}Name`).textContent;
-    const mood = document.getElementById(`${plant}Mood`).textContent;
-
-    // Set the current values in the input fields
-    document.getElementById(`${plant}EditName`).value = name;
-    document.getElementById(`${plant}EditMood`).value = mood;
-
-    // Show the edit form
-    document.getElementById(`${plant}EditForm`).style.display = 'block';
+function startPlantUpdates(plantType) {
+    setInterval(() => updateMood(plantType), 5000); // Update mood every 5 seconds
 }
 
-// Function to save changes
-function saveChanges(plant) {
-    const newName = document.getElementById(`${plant}EditName`).value;
-    const newMood = document.getElementById(`${plant}EditMood`).value;
-
-    // Update the plant card with the new values
-    document.getElementById(`${plant}Name`).textContent = newName;
-    document.getElementById(`${plant}Mood`).textContent = newMood;
-
-    // Hide the edit form
-    document.getElementById(`${plant}EditForm`).style.display = 'none';
-}
-
-// Function to cancel editing
-function cancelEdit(plant) {
-    // Hide the edit form
-    document.getElementById(`${plant}EditForm`).style.display = 'none';
-}
+// Initial mood display for the page
+window.onload = function() {
+    startPlantUpdates(document.title.toLowerCase().split(' - ')[0]); // Starts updates based on the plant type from the title
+};

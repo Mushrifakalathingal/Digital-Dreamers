@@ -65,6 +65,24 @@
 
     <script src="script.js"></script>
     <script>
+        // Function to get a random mood for the rose plant
+        function getRandomMood() {
+            const moods = [
+                "🌞 Happy and Blooming",
+                "💧 Thirsty",
+                "🌧️ Overwatered",
+                "🌼 Thriving",
+                "🌱 Just Starting Out",
+                "🌹 Ready to Blossom",
+                "🌻 Soaking up the Sun"
+            ];
+            const randomIndex = Math.floor(Math.random() * moods.length);
+            return moods[randomIndex];
+        }
+
+        // Display a random mood on page load
+        document.getElementById("roseMood").textContent = getRandomMood();
+
         // Start updates for the Rose plant
         startPlantUpdates("rose");
     </script>

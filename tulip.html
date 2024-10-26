@@ -61,8 +61,25 @@
 
     <script src="script.js"></script>
     <script>
+        // Function to get a random mood for the tulip plant
+        function getRandomMood() {
+            const moods = [
+                "🌷 Blooming with Joy",
+                "💧 Thirsty",
+                "🌱 Growing Steadily",
+                "🌼 Elegant and Graceful",
+                "🌞 Enjoying the Sunlight"
+            ];
+            const randomIndex = Math.floor(Math.random() * moods.length);
+            return moods[randomIndex];
+        }
+    
+        // Display a random mood on page load
+        document.getElementById("tulipMood").textContent = getRandomMood();
+    
         // Start updates for the tulip plant
         startPlantUpdates("tulip");
     </script>
+    
 </body>
 </html>
