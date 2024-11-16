@@ -3,7 +3,7 @@
 # [KNOW YOUR PLANT] 🎯
 
 ## Project URL
-    https://Digital-dreamers.vrcel.app/index.html
+    https://digital-dreamers.vercel.app/index.html
 
 ## Basic Details
 ### Team Name: [Digital Dreamers]
