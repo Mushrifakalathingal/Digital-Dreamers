@@ -1,38 +1,36 @@
 <img width="1280" alt="readme-banner" src="https://github.com/user-attachments/assets/35332e92-44cb-425b-9dff-27bcf1023c6c">
 
-# [Project Name] 🎯
+# [KNOW YOUR PLANT] 🎯
 
+## Project URL
+    https://Digital-dreamers.vrcel.app/index.html
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [Digital Dreamers]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
+- Team Lead: [Mushrifa K] - [EMEA Arts and Science College, Kondotty]
+- Member 2: [Fidha Sherin Pk] - [EMEA Arts and Science College, Kondotty]
 - Member 3: [Name] - [College]
 
 ### Project Description
-[2-3 lines about what your project does]
+[This project will help you to know about your plant's mood]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[We don't know what our plant feels? How we can nuture it by giving what it wants?]
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+[If our plant is connected to an app and through this it can share the feelings and we can jnow what they want]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [python]
+- [canva]
+- [chat GPT]
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+
 
 ### Implementation
 For Software:
